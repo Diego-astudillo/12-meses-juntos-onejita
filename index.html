@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1 año juntos · Oneja & Osito</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#ffc2d6;--ink:#4a2a35;--accent:#e0457b;--accent2:#b0285a;--soft:#fff0f4;--card:rgba(255,255,255,.72);--shadow:rgba(176,40,90,.28);--b1:#ff9ec0;--b2:#ffd1a6;--b3:#c9a7ff;--hlc:rgba(224,69,123,.3);
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1c0b17;--bg2:#3d1230;--ink:#ffe6ee;--accent:#ff7aa8;--accent2:#ff9fc0;--soft:#3d2230;--card:rgba(50,22,40,.72);--shadow:rgba(0,0,0,.55);--b1:#7a1f4f;--b2:#5a2a3a;--b3:#3b2a7a;--hlc:rgba(255,122,168,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#1c0b17;--bg2:#3d1230;--ink:#ffe6ee;--accent:#ff7aa8;--accent2:#ff9fc0;--soft:#3d2230;--card:rgba(50,22,40,.72);--shadow:rgba(0,0,0,.55);--b1:#7a1f4f;--b2:#5a2a3a;--b3:#3b2a7a;--hlc:rgba(255,122,168,.35);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font-family:'Lora',Georgia,serif;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;overflow-x:hidden}
+.bg i{position:fixed;width:55vmax;height:55vmax;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;animation:drift 18s ease-in-out infinite alternate}
+.bg i:nth-child(1){background:var(--b1);top:-20vmax;left:-15vmax}
+.bg i:nth-child(2){background:var(--b2);bottom:-25vmax;right:-15vmax;animation-delay:-6s}
+.bg i:nth-child(3){background:var(--b3);top:30vh;left:35vw;animation-delay:-12s;opacity:.35}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.2)}}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:3}
+.heart{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.75}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.bar{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:4px;z-index:6;background:transparent}
+.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#ffb36b,var(--accent2));transform:scaleX(0);transform-origin:left}
+.toggle{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:7;border:0;border-radius:99px;background:var(--card);color:var(--ink);padding:8px 12px;cursor:pointer;box-shadow:0 4px 12px var(--shadow);backdrop-filter:blur(8px)}
+section,header,main{position:relative;z-index:2}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 18px 40px}
+.kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.8rem;opacity:.75;margin:0 0 6px}
+h1{font-family:'Dancing Script',cursive,serif;font-size:clamp(2.6rem,11vw,5.2rem);line-height:1.05;margin:0 0 6px;color:var(--accent);text-shadow:0 8px 30px var(--shadow)}
+.wd{display:inline-block;white-space:nowrap}.ch{display:inline-block}
+.sub{margin:0 0 10px;font-style:italic;opacity:.85}
+.scene{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:84px;height:96px;font-size:4rem;margin:6px 0 16px}
+.w{display:inline-block;transition:transform 1.4s cubic-bezier(.3,1.4,.5,1)}
+.pal{display:inline-block;animation:hop 1.4s ease-in-out infinite;filter:drop-shadow(0 6px 6px var(--shadow))}
+.w2 .pal{animation-delay:.35s}
+@keyframes hop{50%{transform:translateY(-16px) rotate(-6deg)}}
+.scene.hug .w1{transform:translateX(44px)}.scene.hug .w2{transform:translateX(-44px)}
+.mid{position:absolute;left:50%;top:6px;font-size:1.8rem;opacity:0;transform:translateX(-50%)}
+.scene.hug .mid{animation:burst 1.8s ease-out infinite}
+@keyframes burst{0%{opacity:0;transform:translate(-50%,14px) scale(.4)}35%{opacity:1}100%{opacity:0;transform:translate(-50%,-46px) scale(1.6)}}
+.envelope{position:relative;width:min(300px,78vw);height:196px;cursor:pointer;background:var(--accent);border-radius:10px;box-shadow:0 20px 44px var(--shadow);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-9px)}}
+.envelope::before{content:"";position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,transparent 50%,rgba(0,0,0,.13) 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 50%,rgba(0,0,0,.13) 50%) right/50% 100% no-repeat}
+.flap{position:absolute;top:0;left:0;width:100%;height:104px;background:var(--accent2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top}
+.seal{position:absolute;top:82px;left:50%;font-size:34px;z-index:2;animation:beat 1.2s infinite;transform:translateX(-50%)}
+@keyframes beat{50%{transform:translateX(-50%) scale(1.28)}}
+.hint{margin-top:18px;font-size:.95rem;opacity:.8;animation:blink 2s infinite}.hint.hide{display:none}
+@keyframes blink{50%{opacity:.35}}
+.down{margin-top:14px;font-size:1.6rem;animation:hop 1.2s infinite}
+
+/* Historia */
+#story{max-width:720px;margin:0 auto;padding:40px 18px 60px}
+.pc{position:relative;background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(224,69,123,.25);border-radius:22px;padding:32px 24px 24px;margin:0 0 38px;box-shadow:0 16px 38px var(--shadow);line-height:1.85;font-size:1.06rem}
+.pc::before{content:attr(data-e);position:absolute;top:-22px;left:20px;font-size:1.7rem;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:var(--soft);box-shadow:0 6px 16px var(--shadow)}
+.pc.r::before{left:auto;right:20px}
+.pc.first::first-letter{font-family:'Dancing Script',cursive,serif;font-size:3.4rem;float:left;line-height:.9;padding:4px 8px 0 0;color:var(--accent)}
+.hl{background:linear-gradient(var(--hlc),var(--hlc)) 0 92%/0% 55% no-repeat;transition:background-size 1.2s .3s}.hl.on{background-size:100% 55%}
+.to{font-family:'Dancing Script',cursive,serif;font-size:2.2rem;color:var(--accent2);margin:0 0 20px}
+.song{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(224,69,123,.3);border-radius:18px;padding:14px 18px;margin:0 0 38px;text-decoration:none;color:var(--ink);box-shadow:0 10px 26px var(--shadow);transition:transform .3s}
+.song:hover{transform:scale(1.03)}
+.disc{font-size:2.2rem;animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.song b{display:block}.song small{opacity:.75}
+.eq{display:flex;gap:3px;align-items:flex-end;height:28px;margin-left:auto}
+.eq i{width:5px;height:6px;background:var(--accent);border-radius:3px;animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.6s}
+@keyframes eq{50%{height:28px}}
+.big{font-family:'Dancing Script',cursive,serif;font-size:clamp(2rem,8vw,3.2rem);text-align:center;line-height:1.2;margin:50px 0 10px;background:linear-gradient(90deg,var(--accent),#ffb36b,var(--accent2),var(--accent));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.sign{text-align:right;font-family:'Dancing Script',cursive,serif;font-size:2rem;color:var(--accent2);margin:0 6px 20px}
+
+/* Contador */
+.counter{display:flex;flex-direction:column;align-items:center;margin:30px 0}
+.ring{position:relative;width:190px;height:190px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .t{stroke:rgba(224,69,123,.2)}.ring .p{stroke:var(--accent);stroke-dasharray:377;stroke-dashoffset:377;filter:drop-shadow(0 0 6px var(--accent))}
+.ring .n{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font-family:'Dancing Script',cursive,serif;font-size:3.6rem;color:var(--accent);line-height:1}
+.ring .n small{font-family:'Lora',serif;font-size:.8rem;color:var(--ink);opacity:.75}
+
+/* Besos */
+.kiss{position:relative;display:flex;justify-content:center;align-items:center;height:140px;font-size:5rem;margin-top:20px}
+.k{display:inline-block;filter:drop-shadow(0 6px 6px var(--shadow))}
+.k1{animation:kissL 2.8s ease-in-out infinite}.k2{animation:kissR 2.8s ease-in-out infinite}
+@keyframes kissL{0%,100%{transform:translateX(-30px) rotate(-5deg)}45%,62%{transform:translateX(12px) rotate(14deg)}}
+@keyframes kissR{0%,100%{transform:translateX(30px) rotate(5deg)}45%,62%{transform:translateX(-12px) rotate(-14deg)}}
+.kmid{position:absolute;left:50%;top:20px;font-size:2rem;opacity:0;animation:smooch 2.8s ease-out infinite}
+.kmid.h2{animation-delay:.25s;margin-left:22px}
+@keyframes smooch{0%,38%{opacity:0;transform:translate(-50%,0) scale(.3)}52%{opacity:1;transform:translate(-50%,-26px) scale(1.2)}100%{opacity:0;transform:translate(-50%,-80px) scale(1.6)}}
+.again{display:block;margin:30px auto 0;border:0;border-radius:99px;padding:14px 26px;font:inherit;font-size:1rem;color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 10px 24px var(--shadow);cursor:pointer;transition:transform .3s}
+.again:hover{transform:scale(1.07) rotate(-2deg)}
+
+.kiss{display:flex;justify-content:center;height:auto;font-size:2rem;margin-top:34px}
+.kiss svg{width:min(380px,92vw);height:auto;overflow:visible;filter:drop-shadow(0 12px 16px var(--shadow))}
+.bn,.br,.ear{transform-box:fill-box;transform-origin:50% 100%}
+.bn{animation:hugL 2.8s ease-in-out infinite}.br{animation:hugR 2.8s ease-in-out infinite}
+@keyframes hugL{0%,100%{transform:translateX(-6px) rotate(-3deg)}45%,62%{transform:translateX(8px) rotate(5deg)}}
+@keyframes hugR{0%,100%{transform:translateX(6px) rotate(3deg)}45%,62%{transform:translateX(-8px) rotate(-5deg)}}
+.ear{animation:wig 2.8s ease-in-out infinite}.ear.e2{animation-delay:.3s}
+@keyframes wig{0%,100%{transform:rotate(0)}50%{transform:rotate(-7deg)}}
+.kmid{top:8%}.kmid.h3{animation-delay:.9s;margin-left:-44px;font-size:1.5rem}.kmid.h4{animation-delay:1.5s;margin-left:46px;font-size:1.5rem}
+@media (max-width:480px){
+  .pc{padding:30px 18px 20px;font-size:1rem;line-height:1.75;margin-bottom:34px}
+  .scene{font-size:3rem;gap:58px;height:78px}.scene.hug .w1{transform:translateX(30px)}.scene.hug .w2{transform:translateX(-30px)}
+  .kmid{font-size:1.6rem}
+  .song{padding:12px 14px;gap:10px}.ring{width:160px;height:160px}.ring .n{font-size:3rem}
+}
+@media (max-width:340px){.scene{font-size:2.5rem;gap:44px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hl{background-size:100% 55%}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<div id="hearts"></div>
+<div class="bar"><b id="bar"></b></div>
+<button class="toggle" id="theme" aria-label="Cambiar tema">🌙</button>
+
+<header class="hero">
+  <p class="kicker">1 año juntos</p>
+  <h1 id="title">Feliz aniversario, mi Oneja</h1>
+  <p class="sub">de tu Osito, con todo el amor del mundo 💕</p>
+  <div class="scene" id="scene" aria-hidden="true">
+    <span class="w w1"><span class="pal">🐰</span></span>
+    <span class="mid">💗</span>
+    <span class="w w2"><span class="pal">🐻</span></span>
+  </div>
+  <div class="envelope" id="env" role="button" tabindex="0" aria-label="Abrir la carta">
+    <div class="flap"></div><div class="seal">💌</div>
+  </div>
+  <div class="hint" id="hint">Toca el sobre para abrir tu carta</div>
+</header>
+
+<main id="story" hidden>
+  <h2 class="to">Mi Oneja:</h2>
+  <p class="pc first" data-e="💌">Mi amor, feliz 1 año juntos. Sé que este camino no ha sido fácil: hemos tenido nuestros bajos y nuestras peleas, como cualquier pareja, y no nos hemos visto tanto como quisiéramos. Pero quiero que sepas que yo sí quiero estar contigo, siempre. Sé que no he sido el mejor con mis palabras, que algunas te molestaron y te lastimaron, y quiero pedirte perdón de todo corazón.</p>
+  <p class="pc r" data-e="🤝">Quiero formar un futuro contigo. Si tengo que esperarte, te espero; te apoyaré en cada momento y celebraré tus logros como si fueran míos. Soy consciente de que el camino no va a ser fácil, pero si tú de verdad quieres un futuro juntos, <span class="hl">lucharemos juntos</span>. Así sea vernos 10 minutos, también eso es mi forma de decirte que voy en serio contigo.</p>
+  <p class="pc" data-e="💭">¿Te acuerdas cuando nos decíamos a cada rato “mi vida” y “te amo demasiado”? Un día me dijiste <span class="hl">“estoy tan embobada contigo”</span>, y siempre nos decíamos: “me hiciste un amarre”. ¿Y las bromas de “estoy con mi mozo” o “me voy para Venezuela”, y después me contabas todo? Y esos mensajes larguísimos que nos mandábamos, que me encantaban.</p>
+  <p class="pc r" data-e="🔒">Y sabes algo que me dijiste: <span class="hl">“jamás te fallaría y sería incapaz de hacerte eso”</span>. Me decías que querías hacer todo conmigo. Mira toda nuestra historia: poco a poco me enamoraste tanto que no quiero estar con nadie más en mi vida. Eres, en serio, el amor de mi vida, y por ti te dije que lucharé siempre.</p>
+  <p class="pc" data-e="🐻">Estoy tan tragado de ti como nunca lo había estado de nadie. Cada día me esfuerzo por estar pendiente de ti, por saber si necesitas algo o si puedo ayudarte en algo, porque mi lenguaje del amor es <span class="hl">estar para ti, sin importar el momento</span>.</p>
+  <p class="pc r" data-e="🎧">Me acuerdo del día que me dijiste: <span class="hl">“pensé en ti cuando escuché esta canción”</span>. Era <i>I Think They Call This Love</i>, y desde ese día esa canción es nuestra: cada vez que suena me acuerdo de ti y de lo que tenemos.</p>
+  <a class="song pc-in" href="https://www.youtube.com/watch?v=e1mOmdykmwI" target="_blank" rel="noopener noreferrer">
+    <span class="disc">💿</span>
+    <span><b>I Think They Call This Love</b><small>Nuestra canción · toca para escucharla ▶</small></span>
+    <span class="eq"><i></i><i></i><i></i><i></i></span>
+  </a>
+  <p class="pc" data-e="🏡">Quiero una casa contigo, vivir contigo, despertar a tu lado; no quiero otra piel que no sea la tuya. Quiero planear viajes, regalarte citas sorpresa, llevarte flores, chocolates, alpinitos, todo lo que te gusta. Quiero regalarte los patines que quieres para que empieces a entrenar, y yo ir a verte. Quiero regalarte más libros y una librería grande donde guardes todas tus ediciones y tus cosas. Y claro, tendremos un cuarto de juegos para ganarte en Mario Kart, pelear o jugar juegos de miedo.</p>
+  <p class="pc r" data-e="🐱">Y amor, me preguntaste la última vez si quiero tener hijos. Yo sí, porque creo que sería un buen papá, pero si tú no quieres, no te voy a obligar a nada. Lo que sí quiero es tener gatos contigo, cuidarlos muchísimo y ser una familia, con nuestras cosas y todo.</p>
+  <p class="pc" data-e="🌹">Quiero citas contigo, aunque sean sencillas, porque lo importante es que estoy contigo. Gracias por este año, gracias por aguantarme: no soy fácil, pero por ti daría la vida. Sé que no es la forma, porque también tengo que pensar en mí y en mis proyectos, que quiero hacer crecer, pero quiero compartir contigo todo lo que logre en esta vida, y por ti lucharía en cada momento. Jamás me había sentido así. <span class="hl">La amooo, Oneja, la amo demasiado.</span></p>
+  <p class="pc r" data-e="🔥">Gracias por quedarte, por ser sincera, por ser siempre tú. Sé que a veces eres tosca o seca, pero conozco el amor que tienes por mí, y así, tal como eres, yo te amaré siempre. Me encanta todo de ti, y sí, soy sexual, pero solo contigo: quiero hacerte el amor siempre, mañanero, al almuerzo y en la noche, porque me encantas: duro, agarrarte del cuello, lamerte y manosearte más, y también darte todo mi amor, hacerte el desayuno y hacerte sentir que lo que siento por ti es para siempre.</p>
+  <p class="pc" data-e="🥟">Quiero verte más, salgamos más, así sea a comer empanada. A cualquier plan le digo que sí, pero solo contigo. A esta edad no estoy jugando: te soy leal y te tengo muchísima confianza. Recuerda que aquí estará siempre tu osito, con todo el amor del mundo para ti, ayudándote en cada paso que des. Tu osito, tu rulitos, como me decías antes. Y si algún día cambias o no, te elegiré igual.</p>
+  <p class="pc r" data-e="🙏">Amor, en serio, <span class="hl">gracias por llegar a mi vida</span>. Gracias por este primer año, por cada mensaje, por cada broma y por quedarte conmigo.</p>
+
+  <p class="big">Te elegiría mil veces 💖</p>
+  <p class="sign">Con todo mi amor,<br>tu Osito 🐻</p>
+
+  <div class="counter" id="counter">
+    <div class="ring">
+      <svg viewBox="0 0 140 140"><circle class="t" cx="70" cy="70" r="60"/><circle class="p" id="arc" cx="70" cy="70" r="60"/></svg>
+      <div class="n"><span id="num">0</span><small>días juntos</small></div>
+    </div>
+  </div>
+
+  <div class="kiss" id="kiss" aria-hidden="true">
+    <svg viewBox="0 0 320 215" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="160" cy="209" rx="125" ry="6" fill="rgba(0,0,0,.14)"/>
+      <g class="bn">
+        <g class="ear"><ellipse cx="80" cy="42" rx="14" ry="38" fill="#fff" stroke="#f3c6d6" stroke-width="2" transform="rotate(-12 80 42)"/><ellipse cx="80" cy="46" rx="7" ry="26" fill="#ffb3cb" transform="rotate(-12 80 46)"/></g>
+        <g class="ear e2"><ellipse cx="124" cy="40" rx="14" ry="38" fill="#fff" stroke="#f3c6d6" stroke-width="2" transform="rotate(10 124 40)"/><ellipse cx="124" cy="44" rx="7" ry="26" fill="#ffb3cb" transform="rotate(10 124 44)"/></g>
+        <ellipse cx="105" cy="186" rx="34" ry="26" fill="#fff" stroke="#f3c6d6" stroke-width="2"/>
+        <circle cx="142" cy="172" r="10" fill="#fff" stroke="#f3c6d6" stroke-width="2"/>
+        <circle cx="105" cy="120" r="48" fill="#fff" stroke="#f3c6d6" stroke-width="2"/>
+        <circle cx="82" cy="132" r="9" fill="#ff9ec0" opacity=".55"/><circle cx="124" cy="140" r="7" fill="#ff9ec0" opacity=".55"/>
+        <g fill="none" stroke="#4a2a35" stroke-width="3.5" stroke-linecap="round"><path d="M84 114q7-9 14 0"/><path d="M110 114q7-9 14 0"/><path d="M121 134q5 5 10 0"/></g>
+        <ellipse cx="128" cy="127" rx="5.5" ry="4" fill="#ff6f9c"/>
+      </g>
+      <g class="br">
+        <circle cx="185" cy="80" r="17" fill="#a8683f"/><circle cx="185" cy="82" r="8" fill="#e8c19a"/>
+        <circle cx="245" cy="80" r="17" fill="#a8683f"/><circle cx="245" cy="82" r="8" fill="#e8c19a"/>
+        <ellipse cx="215" cy="186" rx="36" ry="26" fill="#b9764a"/>
+        <ellipse cx="215" cy="190" rx="20" ry="16" fill="#e8c19a"/>
+        <circle cx="178" cy="172" r="10" fill="#b9764a"/>
+        <circle cx="215" cy="120" r="48" fill="#b9764a"/>
+        <ellipse cx="203" cy="135" rx="21" ry="15" fill="#e8c19a"/>
+        <circle cx="236" cy="134" r="9" fill="#ff9ec0" opacity=".6"/><circle cx="190" cy="108" r="0"/>
+        <g fill="none" stroke="#3a2028" stroke-width="3.5" stroke-linecap="round"><path d="M196 114q7-9 14 0"/><path d="M222 114q7-9 14 0"/><path d="M191 138q5 5 10 0"/></g>
+        <ellipse cx="192" cy="129" rx="6" ry="4.5" fill="#3a2028"/>
+      </g>
+    </svg>
+    <span class="kmid">💋</span><span class="kmid h2">💗</span><span class="kmid h3">💕</span><span class="kmid h4">💖</span>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.6.0/confetti.browser.min.js"></script>
+<script>
+(function(){
+  var G=window.gsap,ST=window.ScrollTrigger,$=function(s){return document.querySelector(s)};
+  var box=$('#hearts'),em=['💖','💕','🤍','🌸','🐻','🐰','✨'],opened=false;
+  function party(n){if(window.confetti)confetti({particleCount:n,spread:90,startVelocity:38,origin:{y:.65},colors:['#ff5c8a','#ffc2d6','#ffffff','#e0457b','#ffd166']})}
+  function spawn(){var h=document.createElement('div');h.className='heart';h.textContent=em[Math.floor(Math.random()*em.length)];
+    h.style.left=Math.random()*100+'%';h.style.fontSize=(14+Math.random()*22)+'px';h.style.animationDuration=(6+Math.random()*7)+'s';
+    box.appendChild(h);setTimeout(function(){h.remove()},13000)}
+  setInterval(spawn,800);
+  function pop(x,y,t){var h=document.createElement('div');h.className='heart';h.textContent=t;h.style.left=x+'px';h.style.top=y+'px';h.style.bottom='auto';
+    h.style.fontSize='22px';h.style.animationDuration='2.4s';box.appendChild(h);setTimeout(function(){h.remove()},2600)}
+  document.addEventListener('pointerdown',function(e){pop(e.clientX,e.clientY,'💗')});
+  var last=0;if(matchMedia('(hover:hover)').matches)document.addEventListener('pointermove',function(e){var n=Date.now();if(n-last>90){last=n;pop(e.clientX,e.clientY,'✨')}});
+
+  // Título letra por letra
+  var t=$('#title'),txt=t.textContent;t.setAttribute('aria-label',txt);t.innerHTML='';
+  txt.split(' ').forEach(function(w,i,a){var s=document.createElement('span');s.className='wd';s.setAttribute('aria-hidden','true');
+    w.split('').forEach(function(c){var k=document.createElement('span');k.className='ch';k.textContent=c;s.appendChild(k)});
+    t.appendChild(s);if(i<a.length-1)t.appendChild(document.createTextNode(' '))});
+  if(G){
+    G.from('.ch',{y:70,opacity:0,rotate:-12,stagger:.045,duration:.9,ease:'back.out(2.2)'});
+    G.from('.kicker,.sub',{opacity:0,y:20,duration:1,delay:.6,stagger:.2});
+    G.from('.w1',{y:-300,opacity:0,duration:1.2,delay:.9,ease:'bounce.out'});
+    G.from('.w2',{y:-300,opacity:0,duration:1.2,delay:1.1,ease:'bounce.out'});
+    G.from('#env',{scale:0,rotate:-20,opacity:0,duration:1,delay:1.6,ease:'elastic.out(1,.55)'});
+  }
+
+  // Abrir sobre
+  var env=$('#env');
+  function openIt(){
+    if(opened)return;opened=true;$('#hint').classList.add('hide');$('#scene').classList.add('hug');party(140);
+    if(G){G.timeline().to('.flap',{rotateX:180,transformPerspective:600,duration:.6,ease:'power2.inOut'})
+      .to(env,{y:-40,scale:.7,opacity:0,duration:.7,ease:'power2.in'},'+=.1').set(env,{display:'none'})}
+    else env.style.display='none';
+    setTimeout(function(){$('#story').hidden=false;setupScroll();$('#story').scrollIntoView({behavior:'smooth'});setTimeout(function(){party(60)},500)},1100);
+  }
+  env.addEventListener('click',openIt);
+  env.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openIt()}});
+
+  function setupScroll(){
+    var hls=document.querySelectorAll('.hl');
+    if(G&&ST){
+      G.registerPlugin(ST);
+      document.querySelectorAll('.pc,.song,.to,.big,.sign').forEach(function(el,i){
+        var side=el.classList.contains('r')?60:-60;
+        G.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},x:el.classList.contains('big')||el.classList.contains('to')?0:side,y:el.classList.contains('big')?40:0,scale:el.classList.contains('big')?.6:1,opacity:0,rotate:side/30,duration:1,ease:'power3.out'});
+      });
+      hls.forEach(function(h){ST.create({trigger:h,start:'top 85%',onEnter:function(){h.classList.add('on')}})});
+      ST.create({trigger:'#counter',start:'top 80%',once:true,onEnter:count});
+      ST.create({trigger:'#kiss',start:'top 85%',once:true,onEnter:function(){party(160);setTimeout(function(){party(90)},700)}});
+      ST.refresh();
+    }else{hls.forEach(function(h){h.classList.add('on')});count()}
+  }
+  function count(){
+    var o={n:0},num=$('#num'),arc=$('#arc');
+    if(!G){num.textContent=365;arc.style.strokeDashoffset=0;return}
+    G.to(o,{n:365,duration:2.8,ease:'power2.out',onUpdate:function(){num.textContent=Math.round(o.n);arc.style.strokeDashoffset=377*(1-o.n/365)}});
+  }
+  var bar=$('#bar');
+  addEventListener('scroll',function(){var m=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(m>0?Math.min(1,scrollY/m):0)+')'},{passive:true});
+  var btn=$('#theme'),root=document.documentElement;
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');btn.textContent=dark?'🌙':'☀️';
+  });
+})();
+</script>
+</body>
+</html>
